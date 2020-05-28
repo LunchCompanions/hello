@@ -13,8 +13,15 @@
   }
 }
 
+.logo-label {
+  font-weight: 600;
+  font-size: xx-large;
+}
+
 .App {
   height: 100%;
+  margin-left: 8em;
+  margin-right: 8em;
 }
 
 .App-header {
