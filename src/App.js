@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './snax.svg';
 import './App.css';
+
+import {HashRouter, Route} from "react-router-dom"
+import {MisterSnaxRedirect, MisterSnaxRedirectDev} from "./components/MisterSnaxRedirect";
+import {MisterSnax} from "./components/MisterSnax";
+import {SpaetzleHunter} from "./components/Spaetzlehunter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          MisterSnax - Gruppenbestellungen einfach koordinieren.
-        </p>
-        <a
-          className="App-link"
-          href="https://chrome.google.com/webstore/detail/mistersnax/jmobiglepfamkdimbpcjjaomhinajijp?hl=de&gl=DE"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get the Extension for Chrome!
-        </a>
-      </header>
-    </div>
+    <header className="App-header" id="Content">
+      <HashRouter basename='/'>
+        <div className="App">
+          <Route exact path="/" component={MisterSnax}/>
+          <Route exact path="/mistersnax" component={MisterSnax}/>
+          <Route exact path="/spaetzlehunter" component={SpaetzleHunter}/>
+          <Route exact path="/pd" component={MisterSnaxRedirectDev}/>
+          <Route exact path="/p" component={MisterSnaxRedirect}/>
+        </div>
+      </HashRouter>
+    </header>
   );
 }
+
 
 export default App;
